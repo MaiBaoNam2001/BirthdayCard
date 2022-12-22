@@ -1,14 +1,10 @@
 $(function () {
     $('.birthdayCard').mouseenter(function () {
-        let audio = $('<audio>', {
-            src: 'https://maibaonam2001.github.io/BirthdayCard/music/happy-birthday-to-you.mp3',
-            loop: true,
-            autoplay: true
-        });
-        $('body').prepend(audio);
+        $('audio')[0].play();
     });
 
     $('.birthdayCard').mouseleave(function () {
-        $('body').find('audio').eq(0).remove();
+        $('audio')[0].pause();
+        $('audio')[0].currentTime = 0;
     });
 });
